@@ -1,4 +1,4 @@
-package pong;
+package com.stuartevil.main;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -10,6 +10,10 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
+
+import com.stuartevil.entities.Ball;
+import com.stuartevil.entities.Enemy;
+import com.stuartevil.entities.Player;
 
 public class Game extends Canvas implements Runnable,KeyListener{
 	
@@ -30,9 +34,9 @@ public class Game extends Canvas implements Runnable,KeyListener{
 		setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		this.addKeyListener(this);
-		player = new Player(100, HEIGHT-5);
-		enemy = new Enemy(100, 0);
-		ball = new Ball(100, HEIGHT/2 - 1);
+		player = new Player(100, HEIGHT-5, 40, 5);
+		enemy = new Enemy(100, 0, 40, 5);
+		ball = new Ball(100, HEIGHT/2 - 1, 4, 4);
 	}
 	
 	public void start() {

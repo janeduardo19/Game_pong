@@ -1,18 +1,14 @@
-package pong;
+package com.stuartevil.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Enemy {
+import com.stuartevil.main.Game;
+
+public class Enemy extends Entity{
 	
-	public double x, y;
-	public int width, height;
-	
-	public Enemy(int x, int y) {
-		this.x = x;
-		this.y = y;
-		this.width = 40;
-		this.height = 5;
+	public Enemy(int x, int y, int width, int height) {
+		super(x, y, width, height);
 	}
 	
 	public void update() {
@@ -27,6 +23,6 @@ public class Enemy {
 	
 	public void render(Graphics g) {
 		g.setColor(Color.RED);
-		g.fillRect((int)x, (int)y, width, height);
+		g.fillRect(this.getX(), this.getY(), width, height);
 	}
 }
